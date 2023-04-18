@@ -50,6 +50,8 @@ public class InkomstenBelasting extends OmzetBelasting {
     }
 
 
-    public void setGegevens(Gegevens gegevens) {
-    }
+    public void setGegevens(Gegevens gegevenss) {
+        
+
+    } 
 }

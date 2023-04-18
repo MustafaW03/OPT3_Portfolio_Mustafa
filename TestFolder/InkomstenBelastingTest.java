@@ -14,7 +14,7 @@ public class InkomstenBelastingTest {
 
     // Arrange
     public void setUp() {
-        gegevens = new Gegevens("Mustafa", "Tegels Leggen", 20, 1700, 50000, 1200, 0);
+        gegevens = new Gegevens("Mustafa","Tegels leggen", 20, 1700, 50000, 1200, 0);
         inkomstenBelasting = new InkomstenBelasting();
         inkomstenBelasting.setGegevens(gegevens);
     }
