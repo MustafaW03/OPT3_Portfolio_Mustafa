@@ -1,8 +1,11 @@
-
+package main.java.io.github.MustafaW03.OPT2_Portfolio_Mustafa;
 public class OmzetBelasting implements Berekening {
-   
-   
-    int omzet = gegevens.getUurloon() * gegevens.getGewerkteUren();
+    public int omzet = gegevens.getUurloon() * gegevens.getGewerkteUren();
+
+    
+    
+    
+
     @Override
 
     public int BerekenBelasting(){

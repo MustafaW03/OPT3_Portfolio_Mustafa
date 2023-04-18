@@ -1,14 +1,14 @@
-
+package main.java.io.github.MustafaW03.OPT2_Portfolio_Mustafa;
 
 public class InkomstenBelasting extends OmzetBelasting {
 
     
-    
+    public int Belasting = 0;
    
     @Override
 
     public int BerekenBelasting(){
-        int Belasting = 0;
+        
 
         if (gegevens.getTotaalOmzetAfgelopenJaar() <= 20000) {
             Belasting = (int) Math.round(gegevens.getTotaalOmzetAfgelopenJaar() * 0.15);
@@ -38,14 +38,18 @@ public class InkomstenBelasting extends OmzetBelasting {
 
          System.out.println("");
 
-         System.out.println("Let op! Dit is nog maar een schatting van je inkomstenbelasting op basis van je totale omzet" + "\n" + 
-         "We raden je het aan om een financieel adviseur er nog een naar te laten kijken" + "\n" +  "omdat dit vaak extra belastingvoordelen kan toevoegen waardoor je uitendeljk minder betaalt" + "\n" + 
-         "Deze schatting is er voor bedoeld om de kosten van zo een adviseur zo laag mogelijk te houden doordat het bulk van het werk al gedaan is"
+         System.out.println("Let op! Dit is nog maar een inschatting van je inkomstenbelasting op basis van je totale omzet." + "\n" + 
+         "We raden je het aan om een financieel adviseur er nog een keer naar te laten kijken" + "\n" +  "Omdat dit vaak extra belastingvoordelen kan toevoegen waardoor je uitendeljk minder belasting betaalt." + "\n" + 
+         "Deze inschatting is er voor bedoeld om de kosten van zo een adviseur zo laag mogelijk te houden doordat het bulk van het werk al gedaan is."
          );
 
          System.out.println("");
 
          System.out.println("Wilt uw dit overzicht printen naar een extern bestand?");
 
+    }
+
+
+    public void setGegevens(Gegevens gegevens) {
     }
 }

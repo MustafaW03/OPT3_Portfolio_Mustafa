@@ -1,3 +1,4 @@
+package main.java.io.github.MustafaW03.OPT2_Portfolio_Mustafa;
 public class Gegevens {
     
     
@@ -27,57 +28,47 @@ this.totaalAantalUrenAfgelopenJaar = totaalAantalUrenAfgelopenJaar;
         return naam;
     }
 
-    public void setNaam(String naam){
-        this.naam = naam;
-    }
+    
 
     public String getKlus(){
         return klus;
     }
 
-    public void setKlus(String klus){
-        this.klus = klus;
-    }
+    
 
     public int getUurloon() {
         return uurloon;
     }
 
-    public void setUurloon(int uurloon){
-        this.uurloon = uurloon;
-    }
+    
 
     public int getGewerkteUren(){
         return gewerkteUren;
     }
 
-    public void setGewerkteUren(int gewerkteUren){
-        this.gewerkteUren = gewerkteUren;
-    }
-
+    
     public int getKosten(){
         return kosten;
     }
 
-    public void setKosten(int kosten){
-        this.kosten = kosten;
-    }
+    
 
     public int getTotaalOmzetAfgelopenJaar() {
         return totaalOmzetAfgelopenJaar;
     }
 
-    public void setTotaalOmzetAfgelopenJaar(int totaalOmzetAfgelopenJaar) {
+    public void setTotaalOmzetAfgelopenJaar(int totaalOmzetAfgelopenJaar){
+
         this.totaalOmzetAfgelopenJaar = totaalOmzetAfgelopenJaar;
     }
+
+    
 
     public int getTotaalAantalUrenAfgelopenJaar() {
         return totaalAantalUrenAfgelopenJaar;
     }
 
-    public void setTotaalAantalUrenAfgelopenJaar(int totaalAantalUrenAfgelopenJaar) {
-        this.totaalAantalUrenAfgelopenJaar = totaalAantalUrenAfgelopenJaar;
-    }
+   
 
 
 
