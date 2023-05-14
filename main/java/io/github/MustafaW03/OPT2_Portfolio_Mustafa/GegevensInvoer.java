@@ -28,12 +28,20 @@ public class GegevensInvoer {
 
     System.out.println("Wat is de totale omzet die je vorig jaar hebt gegenereert? Dit is nodig om de inkomstenbelasting uit te rekenen");
     int totaalOmzetAfgelopenJaar = scanner.nextInt();
+
+    System.out.println("En wat waren je kosten dat jaar?");
+    int kostenAfgelopenJaar = scanner.nextInt();
+
      
     System.out.println("En hoeveel uur heb je daarvoor gewerkt? ");
     int totaalAantalUrenAfgelopenJaar = scanner.nextInt();
     
 
-    return new Gegevens(naam, klus, uurloon, gewerkteUren, kosten, totaalOmzetAfgelopenJaar, totaalAantalUrenAfgelopenJaar);
+    return new Gegevens(naam, klus, uurloon, gewerkteUren, kosten, totaalOmzetAfgelopenJaar, totaalAantalUrenAfgelopenJaar, kostenAfgelopenJaar);
+    }
+
+    public Gegevens getGegevens(String string, String string2, int i, int j, int k, int l, int m, int n) {
+        return null;
     }
     
 }

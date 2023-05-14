@@ -9,10 +9,11 @@ public class Gegevens {
     private int gewerkteUren;
     private int kosten;
     private int totaalOmzetAfgelopenJaar;
+    private int kostenAfgelopenJaar;
     private int totaalAantalUrenAfgelopenJaar;
 
 
-    public Gegevens(String naam, String klus, int uurloon, int gewerkteUren, int kosten, int totaalOmzetAfgelopenJaar, int totaalAantalUrenAfgelopenJaar ){
+ public Gegevens(String naam, String klus, int uurloon, int gewerkteUren, int kosten, int totaalOmzetAfgelopenJaar, int totaalAantalUrenAfgelopenJaar, int kostenAfgelopenjaar ){
 this.naam = naam;
 this.klus = klus;
 this.uurloon = uurloon;
@@ -20,7 +21,7 @@ this.gewerkteUren = gewerkteUren;
 this.kosten = kosten;
 this.totaalOmzetAfgelopenJaar = totaalOmzetAfgelopenJaar;
 this.totaalAantalUrenAfgelopenJaar = totaalAantalUrenAfgelopenJaar;
-
+this.kostenAfgelopenJaar = kostenAfgelopenjaar;
 
     }
 
@@ -66,6 +67,10 @@ this.totaalAantalUrenAfgelopenJaar = totaalAantalUrenAfgelopenJaar;
 
     public int getTotaalAantalUrenAfgelopenJaar() {
         return totaalAantalUrenAfgelopenJaar;
+    }
+
+    public int getKostenAfgelopenJaar(){
+        return kostenAfgelopenJaar;
     }
 
    

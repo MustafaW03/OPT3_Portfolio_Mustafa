@@ -49,6 +49,21 @@ public class InkomstenBelasting extends OmzetBelasting {
 
     }
 
+    public boolean GeldigOfOngeldigeDecision(){
+
+if ((gegevens.getTotaalOmzetAfgelopenJaar() > 0 ) && (gegevens.getTotaalAantalUrenAfgelopenJaar() > 0 ) && (gegevens.getKostenAfgelopenJaar() < gegevens.getTotaalOmzetAfgelopenJaar()) ){
+    
+    return true;
+
+}
+
+     else {
+
+        return false;
+     }  
+        
+    }
+
 
     public void setGegevens(Gegevens gegevenss) {
         
