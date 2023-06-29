@@ -1,14 +1,18 @@
 package main.java.io.github.MustafaW03.OPT2_Portfolio_Mustafa;
-public class OmzetBelasting implements Berekening {
+public class OmzetBelasting extends Berekening {
     public int omzet = gegevens.getUurloon() * gegevens.getGewerkteUren();
 
+    public OmzetBelasting() {
+        super();
+        omzet = gegevens.getUurloon() * gegevens.getGewerkteUren();
+    }
     
     
     
 
     @Override
 
-    public int BerekenBelasting(){
+    public int berekenBelasting(){
    
 
        int BTW = (int) (omzet * 0.21);
@@ -32,7 +36,7 @@ public class OmzetBelasting implements Berekening {
         "Gewerkte uren: " + gegevens.getGewerkteUren() + " UUR" + "\n" + 
         "Omzet: " + omzet + " EUR" + "\n" + 
         "Voorbelasting: "  + BerekenVoorBelasting() + " EUR" +  "\n" + 
-        "Omzetbelasting: " + BerekenBelasting() + " EUR" + "\n"
+        "Omzetbelasting: " + berekenBelasting() + " EUR" + "\n"
 
         );
 

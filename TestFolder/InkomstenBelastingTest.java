@@ -73,8 +73,7 @@ public class InkomstenBelastingTest {
     }
 
     @Test
-
-    public void testGeldigeDecision(){
+    public void GeldigOfOngeldigeDecision(){
 
        
 
@@ -110,7 +109,7 @@ public class InkomstenBelastingTest {
 
     @Test
 
-    void test_12000_Hoger_Wel(){
+    void test_12000_Hoger_WelUren(){
         //Arrange
         InkomstenBelasting Belasting = new InkomstenBelasting();
 

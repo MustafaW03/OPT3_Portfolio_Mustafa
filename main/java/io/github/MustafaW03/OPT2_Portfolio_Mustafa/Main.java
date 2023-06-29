@@ -2,13 +2,13 @@ package main.java.io.github.MustafaW03.OPT2_Portfolio_Mustafa;
 public class Main{
 
     public static void main(String args[]) {
-OmzetBelasting omzet = new OmzetBelasting();
-omzet.BerekenBelasting();
-omzet.toonBelasting();
+        BerekeningFactory omzetFactory = new OmzetBelastingFactory();
+        Berekening omzet = omzetFactory.createBerekening();
+        omzet.Template();
 
-InkomstenBelasting inkomst = new InkomstenBelasting();
-inkomst.BerekenBelasting();
-inkomst.toonBelasting();
+        BerekeningFactory inkomstenFactory = new InkomstenBelastingFactory();
+        Berekening inkomsten = inkomstenFactory.createBerekening();
+        inkomsten.Template();
         
     }
 }

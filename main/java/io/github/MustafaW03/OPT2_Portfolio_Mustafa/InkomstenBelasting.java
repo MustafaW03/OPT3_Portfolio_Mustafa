@@ -1,13 +1,16 @@
 package main.java.io.github.MustafaW03.OPT2_Portfolio_Mustafa;
 
-public class InkomstenBelasting extends OmzetBelasting {
+public class InkomstenBelasting extends Berekening {
 
     
     public int Belasting = 0;
+    public InkomstenBelasting() {
+        super();
+    }
    
     @Override
 
-    public int BerekenBelasting(){
+    public int berekenBelasting(){
         
 
         if (gegevens.getTotaalOmzetAfgelopenJaar() <= 20000) {
@@ -33,7 +36,7 @@ public class InkomstenBelasting extends OmzetBelasting {
         System.out.println("De inkomstenbelasting ziet er als volgt uit: " + "\n" +
         "Totale omzet: " + gegevens.getTotaalOmzetAfgelopenJaar() + "\n" + 
         "Totaal aantal uren: " + gegevens.getTotaalAantalUrenAfgelopenJaar() + "\n" + 
-        "InkomstenBelasting: " + BerekenBelasting() + "\n"
+        "InkomstenBelasting: " + berekenBelasting() + "\n"
          );
 
          System.out.println("");
@@ -48,7 +51,7 @@ public class InkomstenBelasting extends OmzetBelasting {
          System.out.println("Wilt uw dit overzicht printen naar een extern bestand?");
 
     }
-
+ 
     public boolean GeldigOfOngeldigeDecision(){
 
 if ((gegevens.getTotaalOmzetAfgelopenJaar() > 0 ) && (gegevens.getTotaalAantalUrenAfgelopenJaar() > 0 ) && (gegevens.getKostenAfgelopenJaar() < gegevens.getTotaalOmzetAfgelopenJaar()) ){
@@ -63,10 +66,8 @@ if ((gegevens.getTotaalOmzetAfgelopenJaar() > 0 ) && (gegevens.getTotaalAantalUr
      }  
         
     }
+ 
 
-
-    public void setGegevens(Gegevens gegevenss) {
-        
-
+    
     } 
-}
+
