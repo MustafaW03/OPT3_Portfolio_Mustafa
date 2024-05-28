@@ -63,7 +63,7 @@ public class OmzetBelastingTest {
 
         //Act
         omzetBelasting.toonBelasting();
-        String expectedOutput = "\nDe omzetbelasting voor deze klus ziet er als volgt uit: \nUurloon: 15 EUR\nGewerkte uren: 20 UUR\nOmzet: 300 EUR\nVoorbelasting: 21 EUR\nOmzetbelasting: 63 EUR\n\nWilt uw dit overzicht printen naar een extern bestand? \n";
+        String expectedOutput = "\nDe omzetbelasting voor deze klus ziet er als volgt uit:\nUurloon: 15 EUR\nGewerkte uren: 20 UUR\nOmzet: 300 EUR\nVoorbelasting: 21 EUR\nOmzetbelasting: 63 EUR\n\nWilt uw dit overzicht printen naar een extern bestand? \n";
 
         //Assert
         assertEquals(expectedOutput, outContent.toString());

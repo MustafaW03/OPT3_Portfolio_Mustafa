@@ -1,4 +1,7 @@
 package main.java.io.github.MustafaW03.OPT2_Portfolio_Mustafa;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class InkomstenBelasting extends Berekening {
 
@@ -41,14 +44,22 @@ public class InkomstenBelasting extends Berekening {
 
          System.out.println("");
 
-         System.out.println("Let op! Dit is nog maar een inschatting van je inkomstenbelasting op basis van je totale omzet." + "\n" + 
-         "We raden je het aan om een financieel adviseur er nog een keer naar te laten kijken" + "\n" +  "Omdat dit vaak extra belastingvoordelen kan toevoegen waardoor je uitendeljk minder belasting betaalt." + "\n" + 
-         "Deze inschatting is er voor bedoeld om de kosten van zo een adviseur zo laag mogelijk te houden doordat het bulk van het werk al gedaan is."
-         );
+         try {
+            FileWriter fileWriter = new FileWriter("InkomstenBelasting.txt", true);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
 
-         System.out.println("");
-
-         System.out.println("Wilt uw dit overzicht printen naar een extern bestand?");
+            printWriter.println("De inkomstenbelasting voor dit jaar ziet er als volgt uit: ");
+            printWriter.println("Totale omzet: " + gegevens.getTotaalOmzetAfgelopenJaar());
+            printWriter.println("Totaal aantal uren: " + gegevens.getTotaalAantalUrenAfgelopenJaar());
+            printWriter.println("InkomstenBelasting: " + berekenBelasting());
+            printWriter.println("-----------------------------------");
+        
+            printWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("Er is een fout opgetreden bij het schrijven naar het bestand");
+            e.printStackTrace();
+        }
 
     }
  
