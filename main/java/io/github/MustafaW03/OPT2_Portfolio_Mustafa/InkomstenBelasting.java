@@ -13,22 +13,28 @@ public class InkomstenBelasting extends Berekening {
    
     @Override
 
-    public int berekenBelasting(){
-        
-
-        if (gegevens.getTotaalOmzetAfgelopenJaar() <= 20000) {
-            Belasting = (int) Math.round(gegevens.getTotaalOmzetAfgelopenJaar() * 0.15);
-        } else if (gegevens.getTotaalOmzetAfgelopenJaar() <= 40000) {
-            Belasting = (int) Math.round(20000 * 0.15 + (gegevens.getTotaalOmzetAfgelopenJaar() - 20000) * 0.25);
-        } else if (gegevens.getTotaalOmzetAfgelopenJaar() <= 60000) {
-            Belasting = (int) Math.round(20000 * 0.15 + 20000 * 0.25 + (gegevens.getTotaalOmzetAfgelopenJaar() - 40000) * 0.4);
-        } else  {
-            Belasting = (int) Math.round(20000 * 0.15 + 20000 * 0.25 + 20000 * 0.4 + (gegevens.getTotaalOmzetAfgelopenJaar() - 60000) * 0.5);
+    public int berekenBelasting() {
+        int[] belastingschaal = {20000, 40000, 60000, Integer.MAX_VALUE};
+        double[] rates = {0.15, 0.25, 0.4, 0.5};
+        int totalOmzet = gegevens.getTotaalOmzetAfgelopenJaar();
+        int rest = totalOmzet;
+        Belasting = 0;
+    
+        for (int i = 0; i < belastingschaal.length; i++) {
+            if (rest <= belastingschaal[i]) {
+                Belasting += Math.round(rest * rates[i]);
+                break;
+            } else {
+                int belastbaarInkomen = belastingschaal[i] - (i > 0 ? belastingschaal[i - 1] : 0);
+                Belasting += Math.round(belastbaarInkomen * rates[i]);
+                rest -= belastbaarInkomen;
+            }
         }
     
         return Belasting;
     }
-    
+
+
 
     @Override
 
