@@ -3,3 +3,8 @@ Totale omzet: 125000
 Totaal aantal uren: 2500
 InkomstenBelasting: 48500
 -----------------------------------
+De inkomstenbelasting voor dit jaar ziet er als volgt uit: 
+Totale omzet: 125000
+Totaal aantal uren: 2500
+InkomstenBelasting: 48500
+-----------------------------------

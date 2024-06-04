@@ -5,3 +5,10 @@ Omzet: 1000 EUR
 Voorbelasting: 42 EUR
 Omzetbelasting: 210 EUR
 -----------------------------------
+De omzetbelasting voor deze klus ziet er als volgt uit: 
+Uurloon: 20 EUR
+Gewerkte uren: 40 UUR
+Omzet: 800 EUR
+Voorbelasting: 42 EUR
+Omzetbelasting: 168 EUR
+-----------------------------------
