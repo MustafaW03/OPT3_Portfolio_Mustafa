@@ -1,4 +1,7 @@
 package main.java.io.github.MustafaW03.OPT2_Portfolio_Mustafa;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class InkomstenBelasting extends Berekening {
 
@@ -10,22 +13,28 @@ public class InkomstenBelasting extends Berekening {
    
     @Override
 
-    public int berekenBelasting(){
-        
-
-        if (gegevens.getTotaalOmzetAfgelopenJaar() <= 20000) {
-            Belasting = (int) Math.round(gegevens.getTotaalOmzetAfgelopenJaar() * 0.15);
-        } else if (gegevens.getTotaalOmzetAfgelopenJaar() <= 40000) {
-            Belasting = (int) Math.round(20000 * 0.15 + (gegevens.getTotaalOmzetAfgelopenJaar() - 20000) * 0.25);
-        } else if (gegevens.getTotaalOmzetAfgelopenJaar() <= 60000) {
-            Belasting = (int) Math.round(20000 * 0.15 + 20000 * 0.25 + (gegevens.getTotaalOmzetAfgelopenJaar() - 40000) * 0.4);
-        } else  {
-            Belasting = (int) Math.round(20000 * 0.15 + 20000 * 0.25 + 20000 * 0.4 + (gegevens.getTotaalOmzetAfgelopenJaar() - 60000) * 0.5);
+    public int berekenBelasting() {
+        int[] belastingschaal = {20000, 40000, 60000, Integer.MAX_VALUE};
+        double[] rates = {0.15, 0.25, 0.4, 0.5};
+        int totalOmzet = inkomstengegevens.getTotaalOmzetAfgelopenJaar();
+        int rest = totalOmzet;
+        Belasting = 0;
+    
+        for (int i = 0; i < belastingschaal.length; i++) {
+            if (rest <= belastingschaal[i]) {
+                Belasting += Math.round(rest * rates[i]);
+                break;
+            } else {
+                int belastbaarInkomen = belastingschaal[i] - (i > 0 ? belastingschaal[i - 1] : 0);
+                Belasting += Math.round(belastbaarInkomen * rates[i]);
+                rest -= belastbaarInkomen;
+            }
         }
     
         return Belasting;
     }
-    
+
+
 
     @Override
 
@@ -34,27 +43,35 @@ public class InkomstenBelasting extends Berekening {
         System.out.println("");
 
         System.out.println("De inkomstenbelasting ziet er als volgt uit: " + "\n" +
-        "Totale omzet: " + gegevens.getTotaalOmzetAfgelopenJaar() + "\n" + 
-        "Totaal aantal uren: " + gegevens.getTotaalAantalUrenAfgelopenJaar() + "\n" + 
+        "Totale omzet: " + inkomstengegevens.getTotaalOmzetAfgelopenJaar() + "\n" + 
+        "Totaal aantal uren: " + inkomstengegevens.getTotaalAantalUrenAfgelopenJaar() + "\n" + 
         "InkomstenBelasting: " + berekenBelasting() + "\n"
          );
 
          System.out.println("");
 
-         System.out.println("Let op! Dit is nog maar een inschatting van je inkomstenbelasting op basis van je totale omzet." + "\n" + 
-         "We raden je het aan om een financieel adviseur er nog een keer naar te laten kijken" + "\n" +  "Omdat dit vaak extra belastingvoordelen kan toevoegen waardoor je uitendeljk minder belasting betaalt." + "\n" + 
-         "Deze inschatting is er voor bedoeld om de kosten van zo een adviseur zo laag mogelijk te houden doordat het bulk van het werk al gedaan is."
-         );
+         try {
+            FileWriter fileWriter = new FileWriter("InkomstenBelasting.txt", true);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
 
-         System.out.println("");
-
-         System.out.println("Wilt uw dit overzicht printen naar een extern bestand?");
+            printWriter.println("De inkomstenbelasting voor dit jaar ziet er als volgt uit: ");
+            printWriter.println("Totale omzet: " + inkomstengegevens.getTotaalOmzetAfgelopenJaar());
+            printWriter.println("Totaal aantal uren: " + inkomstengegevens.getTotaalAantalUrenAfgelopenJaar());
+            printWriter.println("InkomstenBelasting: " + berekenBelasting());
+            printWriter.println("-----------------------------------");
+        
+            printWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("Er is een fout opgetreden bij het schrijven naar het bestand");
+            e.printStackTrace();
+        }
 
     }
  
     public boolean GeldigOfOngeldigeDecision(){
 
-if ((gegevens.getTotaalOmzetAfgelopenJaar() > 0 ) && (gegevens.getTotaalAantalUrenAfgelopenJaar() > 0 ) && (gegevens.getKostenAfgelopenJaar() < gegevens.getTotaalOmzetAfgelopenJaar()) ){
+if ((inkomstengegevens.getTotaalOmzetAfgelopenJaar() > 0 ) && (inkomstengegevens.getTotaalAantalUrenAfgelopenJaar() > 0 ) && (inkomstengegevens.getKostenAfgelopenJaar() < inkomstengegevens.getTotaalOmzetAfgelopenJaar()) ){
     
     return true;
 
