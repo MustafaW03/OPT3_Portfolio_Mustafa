@@ -3,11 +3,15 @@ import java.util.Scanner;
 
 public abstract class Berekening {
 
-    public Gegevens gegevens;
+    public Gegevens omzetgegevens;
+    public Gegevens inkomstengegevens;
 
     public Berekening() {
         GegevensInvoer gegevensInvoer = new GegevensInvoer(new Scanner(System.in));
-        gegevens = gegevensInvoer.getGegevensInvoer();
+        omzetgegevens = gegevensInvoer.getOmzetGegevens();
+
+        inkomstengegevens = gegevensInvoer.getInkomstenGegevens();
+
     }
 
     public void  Template(){

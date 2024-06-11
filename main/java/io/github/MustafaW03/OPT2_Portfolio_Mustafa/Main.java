@@ -8,7 +8,7 @@ public class Main{
 
         BerekeningFactory inkomstenFactory = new InkomstenBelastingFactory();
         Berekening inkomsten = inkomstenFactory.createBerekening();
-        inkomsten.Template();
+        inkomsten.Template(); 
       
     }
 }

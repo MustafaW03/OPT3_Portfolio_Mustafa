@@ -16,7 +16,7 @@ public class InkomstenBelasting extends Berekening {
     public int berekenBelasting() {
         int[] belastingschaal = {20000, 40000, 60000, Integer.MAX_VALUE};
         double[] rates = {0.15, 0.25, 0.4, 0.5};
-        int totalOmzet = gegevens.getTotaalOmzetAfgelopenJaar();
+        int totalOmzet = inkomstengegevens.getTotaalOmzetAfgelopenJaar();
         int rest = totalOmzet;
         Belasting = 0;
     
@@ -43,8 +43,8 @@ public class InkomstenBelasting extends Berekening {
         System.out.println("");
 
         System.out.println("De inkomstenbelasting ziet er als volgt uit: " + "\n" +
-        "Totale omzet: " + gegevens.getTotaalOmzetAfgelopenJaar() + "\n" + 
-        "Totaal aantal uren: " + gegevens.getTotaalAantalUrenAfgelopenJaar() + "\n" + 
+        "Totale omzet: " + inkomstengegevens.getTotaalOmzetAfgelopenJaar() + "\n" + 
+        "Totaal aantal uren: " + inkomstengegevens.getTotaalAantalUrenAfgelopenJaar() + "\n" + 
         "InkomstenBelasting: " + berekenBelasting() + "\n"
          );
 
@@ -55,8 +55,8 @@ public class InkomstenBelasting extends Berekening {
             PrintWriter printWriter = new PrintWriter(fileWriter);
 
             printWriter.println("De inkomstenbelasting voor dit jaar ziet er als volgt uit: ");
-            printWriter.println("Totale omzet: " + gegevens.getTotaalOmzetAfgelopenJaar());
-            printWriter.println("Totaal aantal uren: " + gegevens.getTotaalAantalUrenAfgelopenJaar());
+            printWriter.println("Totale omzet: " + inkomstengegevens.getTotaalOmzetAfgelopenJaar());
+            printWriter.println("Totaal aantal uren: " + inkomstengegevens.getTotaalAantalUrenAfgelopenJaar());
             printWriter.println("InkomstenBelasting: " + berekenBelasting());
             printWriter.println("-----------------------------------");
         
@@ -71,7 +71,7 @@ public class InkomstenBelasting extends Berekening {
  
     public boolean GeldigOfOngeldigeDecision(){
 
-if ((gegevens.getTotaalOmzetAfgelopenJaar() > 0 ) && (gegevens.getTotaalAantalUrenAfgelopenJaar() > 0 ) && (gegevens.getKostenAfgelopenJaar() < gegevens.getTotaalOmzetAfgelopenJaar()) ){
+if ((inkomstengegevens.getTotaalOmzetAfgelopenJaar() > 0 ) && (inkomstengegevens.getTotaalAantalUrenAfgelopenJaar() > 0 ) && (inkomstengegevens.getKostenAfgelopenJaar() < inkomstengegevens.getTotaalOmzetAfgelopenJaar()) ){
     
     return true;
 
