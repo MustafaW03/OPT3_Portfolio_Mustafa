@@ -12,7 +12,6 @@ public class InkomstenBelasting extends Berekening {
     }
    
     @Override
-
     public int berekenBelasting() {
         int[] belastingschaal = {20000, 40000, 60000, Integer.MAX_VALUE};
         double[] rates = {0.15, 0.25, 0.4, 0.5};
@@ -22,7 +21,8 @@ public class InkomstenBelasting extends Berekening {
     
         for (int i = 0; i < belastingschaal.length; i++) {
             if (rest <= belastingschaal[i]) {
-                Belasting += Math.round(rest * rates[i]);
+                int belastbaarInkomen = rest - (i > 0 ? belastingschaal[i - 1] : 0);
+                Belasting += Math.round(belastbaarInkomen * rates[i]);
                 break;
             } else {
                 int belastbaarInkomen = belastingschaal[i] - (i > 0 ? belastingschaal[i - 1] : 0);

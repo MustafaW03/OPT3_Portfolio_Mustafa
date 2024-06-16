@@ -1,0 +1,29 @@
+
+De omzetbelasting voor deze klus ziet er als volgt uit: 
+Uurloon: 2 EUR
+Gewerkte uren: 2 UUR
+Omzet: 4 EUR
+Voorbelasting: 0 EUR
+Omzetbelasting: 0 EUR
+-----------------------------------
+De omzetbelasting voor deze klus ziet er als volgt uit: 
+Uurloon: 2 EUR
+Gewerkte uren: 2 UUR
+Omzet: 4 EUR
+Voorbelasting: 4 EUR
+Omzetbelasting: 0 EUR
+-----------------------------------
+De omzetbelasting voor deze klus ziet er als volgt uit: 
+Uurloon: 3 EUR
+Gewerkte uren: 3 UUR
+Omzet: 9 EUR
+Voorbelasting: 0 EUR
+Omzetbelasting: 1 EUR
+-----------------------------------
+De omzetbelasting voor deze klus ziet er als volgt uit: 
+Uurloon: 4 EUR
+Gewerkte uren: 4 UUR
+Omzet: 16 EUR
+Voorbelasting: 0 EUR
+Omzetbelasting: 3 EUR
+-----------------------------------

@@ -44,7 +44,7 @@ public class OmzetBelasting extends Berekening {
 
         );
 
-        System.out.println("Wilt uw dit overzicht printen naar een extern bestand? ");
+        System.out.println("Dit bestand is opgeslagen!");
 
         try { 
             FileWriter fileWriter = new FileWriter("OmzetBelasting.txt", true);

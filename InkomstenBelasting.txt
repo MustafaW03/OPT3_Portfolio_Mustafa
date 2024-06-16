@@ -1,0 +1,21 @@
+
+De inkomstenbelasting voor dit jaar ziet er als volgt uit: 
+Totale omzet: 70000
+Totaal aantal uren: 4000
+InkomstenBelasting: 51000
+-----------------------------------
+De inkomstenbelasting voor dit jaar ziet er als volgt uit: 
+Totale omzet: 70000
+Totaal aantal uren: 3000
+InkomstenBelasting: 51000
+-----------------------------------
+De inkomstenbelasting voor dit jaar ziet er als volgt uit: 
+Totale omzet: 100000
+Totaal aantal uren: 10000
+InkomstenBelasting: 32000
+-----------------------------------
+De inkomstenbelasting voor dit jaar ziet er als volgt uit: 
+Totale omzet: 100000
+Totaal aantal uren: 3
+InkomstenBelasting: 16000
+-----------------------------------
